@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="jerwin.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+    .section {
+      padding: 60px 0;
+    }
+
+    /* Header Styling */
+    .navbar {
+      background: rgba(0, 0, 0, 0.8);
+      transition: all 0.4s;
+    }
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .navbar-nav .nav-link {
+      color: #f8f9fa;
+    }
+    .navbar-toggler {
+      border-color: #f8f9fa;
+    }
+    .btn-outline-light:hover {
+      background: #f8f9fa;
+      color: #000000;
+    }
+
+    /* Parallax Banner */
+    .parallax-container {
+      background: url(bg.jpg) no-repeat center center;
+      background-size: cover;
+      padding: 150px 0;
+      position: relative;
+    }
+    .parallax-container .overlay-1 {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 100px 0;
+    }
+    .parallax-content h2 {
+      font-size: 3rem;
+      color: #f8f9fa;
+      font-weight: bold;
+    }
+    .breadcrumbs-custom-path li a {
+      color: #f8f9fa;
+      font-weight: 600;
+    }
+
+    /* About Section */
+    .about-me-section {
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    }
+    .about-me-section h2 {
+      color: #000000;
+    }
+    .about-me-section p {
+      line-height: 1.8;
+    }
+
+    /* Awards Section */
+    .clients-default img {
+      max-width: 100%;
+      transition: transform 0.3s ease;
+    }
+    .clients-default img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    .footer-minimal {
+      background-color: #333;
+      padding: 40px 0;
+      color: #f8f9fa;
+      text-align: center;
+    }
+    .footer-minimal-nav a, .social-list a {
+      color: #f8f9fa;
+      margin: 0 10px;
+    }
+    .social-list a:hover {
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<header>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">About Us</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacts.html">Contacts</a></li>
+        </ul>
+        <a class="btn btn-outline-light ms-3" href="Resume.pdf" download>Download Resume</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Parallax Banner -->
+<section class="parallax-container overlay-1">
+  <div class="parallax-content text-center text-light">
+    <div class="container">
+      <h2 class="mb-2">JERWIN D. TABUAC</h2>
+      <p class="degree-info">Bachelor of Science in Information Technology</p>
+    </div>
+  </div>
+</section>
+
+<!-- About Me Section -->
+<section class="about-me-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-5 text-center mb-4 mb-lg-0">
+        <img src="me 1.jpg" alt="My Photo" class="img-fluid rounded-circle">
+      </div>
+      <div class="col-lg-7">
+        <div class="p-4">
+          <h2 class="text-black mb-4">About Me</h2>
+          <p class="text-black">I am a 4th-year Bachelor of Science in Information Technology student at Ilocos Sur Community College. As a dedicated team player, I adapt well to challenging situations and am motivated to continuously learn.</p>
+          <p class="text-black">Driven by passion, I strive to set new goals, push boundaries, and acquire new skills to reach my full potential. My ambition is to provide valuable contributions and consistently exceed expectations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Awards Section -->
+<section class="section bg-light text-center">
+  <div class="container">
+    <h2>My Awards</h2>
+    <div class="row">
+      <div class="col-md-4"><img src="Certificate 1.jpg" alt="Award 1" class="img-fluid"></div>
+      <div class="col-md-4"><img src="Certificate 2.jpg" alt="Award 2" class="img-fluid"></div>
+      <div class="col-md-4"><img src="Certificate 3.jpg" alt="Award 3" class="img-fluid"></div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-4 offset-md-4"><img src="Certificate 4.jpg" alt="Award 4" class="img-fluid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer-minimal">
+  <div class="container">
+    <a href="index.html"></a>
+    <p class="mt-3">&copy; <span id="year"></span> Jerwin D. Tabuac. All Rights Reserved.</p>
+    <ul class="social-list list-inline mt-3">
+      <li class="list-inline-item"><a href="#" class="fab fa-facebook-f"></a></li>
+      <li class="list-inline-item"><a href="#" class="fab fa-instagram"></a></li>
+      <li class="list-inline-item"><a href="#" class="fab fa-twitter"></a></li>
+      <li class="list-inline-item"><a href="#" class="fab fa-youtube"></a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

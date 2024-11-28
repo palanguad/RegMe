@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="jerwin.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Goal Card Styling */
+    .goal-card {
+      background: #ffffff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .goal-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .goal-card h5 {
+      font-weight: bold;
+    }
+
+    /* Modal Custom Styles */
+    .modal-content {
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .modal-content:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-header {
+      border-bottom: 2px solid #ddd;
+    }
+
+    .modal-body {
+      font-size: 1.1em;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .modal-footer {
+      border-top: 1px solid #ddd;
+      padding: 15px;
+    }
+
+    .modal-dialog {
+      max-width: 600px;
+      margin: 30px auto;
+    }
+
+    /* Icon Styling in Cards */
+    .goal-card i {
+      transition: transform 0.3s ease;
+    }
+
+    .goal-card:hover i {
+      transform: scale(1.2);
+    }
+
+        /* Footer */
+        .footer-minimal {
+      background-color: #333;
+      padding: 40px 0;
+      color: #f8f9fa;
+      text-align: center;
+    }
+    .footer-minimal-nav a, .social-list a {
+      color: #f8f9fa;
+      margin: 0 10px;
+    }
+    .social-list a:hover {
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">JERWIN D. TABUAC</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about-us.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacts.html">Contacts</a>
+            </li>
+          </ul>
+          <a class="btn btn-outline-light ms-3" href="Resume.pdf" download>Download Resume</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="text-center bg-dark text-light" style="background-image: url('bg.jpg'); background-size: cover; background-position: center; height: 45vh; padding-top: 150px;">
+    <div class="container">
+      <h1>Welcome</h1>
+      <p class="lead">This is my simple Portfolio of Me</p>
+    </div>
+  </section>
+
+<!-- About Me Section -->
+<section class="about-me-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-5 text-center mb-4 mb-lg-0">
+        <div class="three-d-wrapper">
+          <div class="circle-image-wrapper">
+            <img src="me 1.jpg" alt="My Photo" class="img-fluid three-d-image">
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="p-4">
+          <h2 class="text-black mb-4">About Me</h2>
+          <p class="text-black">I am a 4th-year Bachelor of Science in Information Technology student at Ilocos Sur Community College. As a dedicated team player, I adapt well to challenging situations and am motivated to continuously learn.</p>
+          <p class="text-black">Driven by passion, I strive to set new goals, push boundaries, and acquire new skills to reach my full potential. My ambition is to provide valuable contributions and consistently exceed expectations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* General Styles for About Me Section */
+  .about-me-section {
+    color: #000; /* Black text color */
+  }
+
+  .about-me-section h2 {
+    color: #000; /* Ensures heading is black */
+  }
+
+  .about-me-section p {
+    color: #000; /* Ensures paragraphs are black */
+  }
+
+  /* Wrapper for 3D Effect */
+  .three-d-wrapper {
+    perspective: 1000px; /* Gives the 3D effect perspective */
+  }
+
+  /* Circle Image Wrapper */
+  .circle-image-wrapper {
+    width: 350px; /* Fixed width for a consistent circle */
+    height: 350px; /* Same as width for a perfect circle */
+    border-radius: 50%; /* Makes the image circular */
+    overflow: hidden; /* Ensures the image fits inside the circle */
+    display: inline-block; /* Centers the circle image */
+    border: 2px solid #484848; /* Add a border around the circle */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    transition: box-shadow 0.5s ease-in-out;
+  }
+
+  /* Apply 3D Effect to Image */
+  .three-d-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the circle without distortion */
+    transform: rotateY(15deg) rotateX(5deg); /* Initial 3D rotation */
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* Hover Effect for 3D Interaction */
+  .circle-image-wrapper:hover .three-d-image {
+    transform: rotateY(0deg) rotateX(0deg) scale(1.1); /* Interactive hover effect */
+  }
+
+  .circle-image-wrapper:hover {
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.6); /* Enhanced shadow on hover */
+  }
+</style>
+
+  <!-- My Projects Section -->
+  <section id="projects" class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <!-- Mid-Term Goals Card -->
+        <div class="col-md-4 mb-4 text-center">
+          <div class="goal-card p-4 rounded shadow-sm" data-bs-toggle="modal">
+            <i class="fas fa-folder fa-3x mb-3 text-warning"></i>
+            <h5 class="mb-3">My Projects</h5>
+            <a href="project1.html" class="btn btn-primary">View Projects</a>
+          </div>
+        </div>
+      </div>
+  </section>
+
+<!-- Goals Section -->
+<section id="goals" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">My Goals</h2>
+    <div class="row text-center">
+      <!-- Short-Term Goals Card -->
+      <div class="col-md-4 mb-4">
+        <div class="goal-card p-4 rounded shadow-sm" data-bs-toggle="modal" data-bs-target="#goalModal1">
+          <i class="fas fa-rocket fa-3x mb-3 text-primary"></i>
+          <h5 class="mb-3">Short-Term Goals</h5>
+        </div>
+      </div>
+
+      <!-- Mid-Term Goals Card -->
+      <div class="col-md-4 mb-4">
+        <div class="goal-card p-4 rounded shadow-sm" data-bs-toggle="modal" data-bs-target="#goalModal2">
+          <i class="fas fa-briefcase fa-3x mb-3 text-warning"></i>
+          <h5 class="mb-3">Mid-Term Goals</h5>
+        </div>
+      </div>
+
+      <!-- Long-Term Goals Card -->
+      <div class="col-md-4 mb-4">
+        <div class="goal-card p-4 rounded shadow-sm" data-bs-toggle="modal" data-bs-target="#goalModal3">
+          <i class="fas fa-bullseye fa-3x mb-3 text-success"></i>
+          <h5 class="mb-3">Long-Term Goals</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal for Short-Term Goals -->
+<div class="modal fade" id="goalModal1" tabindex="-1" aria-labelledby="goalModal1Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content rounded shadow-lg border-primary">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="goalModal1Label">Short-Term Goals</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>Complete my Bachelor's degree in Information Technology with a focus on cybersecurity and network management.</li>
+          <li>Obtain industry-recognized certifications such as CompTIA Network+ and Security+.</li>
+          <li>Participate in internships or practical projects to gain hands-on experience.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Mid-Term Goals -->
+<div class="modal fade" id="goalModal2" tabindex="-1" aria-labelledby="goalModal2Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content rounded shadow-lg border-warning">
+      <div class="modal-header bg-warning text-dark">
+        <h5 class="modal-title" id="goalModal2Label">Mid-Term Goals</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>Secure a full-time role as a network administrator, cybersecurity analyst, or systems administrator.</li>
+          <li>Expand my professional network and connect with IT professionals.</li>
+          <li>Continue pursuing professional development through advanced certifications.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Long-Term Goals -->
+<div class="modal fade" id="goalModal3" tabindex="-1" aria-labelledby="goalModal3Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content rounded shadow-lg border-success">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title" id="goalModal3Label">Long-Term Goals</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>Establish myself as an expert in cybersecurity, specializing in threat analysis.</li>
+          <li>Lead a team of IT professionals or work as a cybersecurity consultant.</li>
+          <li>Mentor upcoming IT students and contribute to open-source projects.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Goal Card Styling */
+  .goal-card {
+    background: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  .goal-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  .goal-card h5 {
+    font-weight: bold;
+  }
+
+  /* Modal Custom Styles */
+  .modal-content {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+  }
+  .modal-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  }
+  .modal-header {
+    border-bottom: 2px solid #ddd;
+  }
+  .modal-body {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.6;
+  }
+  .modal-footer {
+    border-top: 1px solid #ddd;
+    padding: 15px;
+  }
+  .modal-dialog {
+    max-width: 600px;
+    margin: 30px auto;
+  }
+</style>
+
+
+ <!-- Container for the Skills Section -->
+<section id="skills" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">My Skills</h2>
+    <div class="row text-center">
+      <!-- Programming Skills Card -->
+      <div class="col-md-4 mb-4">
+        <div class="card skill-tab p-4 rounded shadow-sm" data-bs-toggle="modal" data-bs-target="#skillsModal1">
+          <i class="fas fa-laptop-code fa-3x mb-3 text-primary"></i>
+          <h5 class="card-title mb-3">Programming</h5>
+          <p class="card-text">Click to view details about my programming skills, including languages like Python and JavaScript.</p>
+        </div>
+      </div>
+
+      <!-- Technical Skills Card -->
+      <div class="col-md-4 mb-4">
+        <div class="card skill-tab p-4 rounded shadow-sm" data-bs-toggle="modal" data-bs-target="#skillsModal2">
+          <i class="fas fa-network-wired fa-3x mb-3 text-warning"></i>
+          <h5 class="card-title mb-3">Technical Knowledge</h5>
+          <p class="card-text">Click to view my technical knowledge in network administration and cybersecurity.</p>
+        </div>
+      </div>
+
+      <!-- Personal Skills Card -->
+      <div class="col-md-4 mb-4">
+        <div class="card skill-tab p-4 rounded shadow-sm" data-bs-toggle="modal" data-bs-target="#skillsModal3">
+          <i class="fas fa-users fa-3x mb-3 text-success"></i>
+          <h5 class="card-title mb-3">Personal Skills</h5>
+          <p class="card-text">Click to learn more about my personal skills like problem-solving and time management.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modals for Skills -->
+<!-- Programming Skills Modal -->
+<div class="modal fade" id="skillsModal1" tabindex="-1" aria-labelledby="skillsModal1Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="border-radius: 10px;">
+      <div class="modal-header" style="background-color: #007bff; color: white;">
+        <h5 class="modal-title" id="skillsModal1Label">Programming Skills</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="background-color: #f9f9f9;">
+        <ul>
+          <li><strong>JavaScript:</strong> Experienced in creating dynamic web pages with React and Node.js.</li>
+          <li><strong>SQL:</strong> Skilled in SQL querying and database management.</li>
+        </ul>
+      </div>
+      <div class="modal-footer" style="border-top: none;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Technical Skills Modal -->
+<div class="modal fade" id="skillsModal2" tabindex="-1" aria-labelledby="skillsModal2Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="border-radius: 10px;">
+      <div class="modal-header" style="background-color: #ffcc00; color: black;">
+        <h5 class="modal-title" id="skillsModal2Label">Technical Knowledge</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="background-color: #f9f9f9;">
+        <ul>
+          <li><strong>Network Administration:</strong> Knowledge in configuring and managing networks.</li>
+          <li><strong>Cybersecurity:</strong> Experience with security protocols, encryption, and threat analysis.</li>
+          <li><strong>Web Development:</strong> Skilled in HTML, CSS, JavaScript, and frameworks like Bootstrap.</li>
+        </ul>
+      </div>
+      <div class="modal-footer" style="border-top: none;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Personal Skills Modal -->
+<div class="modal fade" id="skillsModal3" tabindex="-1" aria-labelledby="skillsModal3Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="border-radius: 10px;">
+      <div class="modal-header" style="background-color: #28a745; color: white;">
+        <h5 class="modal-title" id="skillsModal3Label">Personal Skills</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="background-color: #f9f9f9;">
+        <ul>
+          <li><strong>Problem-Solving:</strong> Strong analytical and troubleshooting abilities.</li>
+          <li><strong>Time Management:</strong> Efficient at managing multiple tasks and meeting deadlines.</li>
+          <li><strong>Communication:</strong> Able to explain complex concepts to non-technical audiences.</li>
+        </ul>
+      </div>
+      <div class="modal-footer" style="border-top: none;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Skill Card Styling */
+  .skill-tab {
+    background: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  .skill-tab:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  .skill-tab h5 {
+    font-weight: bold;
+  }
+
+  /* Modal Custom Styles */
+  .modal-content {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+  }
+  .modal-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  }
+  .modal-header {
+    border-bottom: 2px solid #ddd;
+  }
+  .modal-body {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.6;
+  }
+  .modal-footer {
+    border-top: 1px solid #ddd;
+    padding: 15px;
+  }
+  .modal-dialog {
+    max-width: 600px;
+    margin: 30px auto;
+  }
+</style>
+
+
+  <!-- Footer Section -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 Jerwin D. Tabuac. All rights reserved.</p>
+    <ul class="social-list list-inline mt-3">
+      <li class="list-inline-item"><a href="#" class="fab fa-facebook-f"></a></li>
+      <li class="list-inline-item"><a href="#" class="fab fa-instagram"></a></li>
+      <li class="list-inline-item"><a href="#" class="fab fa-twitter"></a></li>
+      <li class="list-inline-item"><a href="#" class="fab fa-youtube"></a></li>
+    </ul>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
